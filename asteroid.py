@@ -1,7 +1,8 @@
+import random
 from circleshape import CircleShape
-from constants import LINE_WIDTH
+from constants import *
 import pygame
-
+from logger import log_event
 class Asteroid(CircleShape):
     def __init__(self, x, y, radius):
         super().__init__(x, y, radius)
@@ -12,3 +13,8 @@ class Asteroid(CircleShape):
     def update(self, dt):
         self.position += self.velocity * dt
 
+    def split(self):
+        self.kill()
+        if not self.radius <= ASTEROID_MIN_RADIUS:
+            log_event("asteroid_spit") 
+        
