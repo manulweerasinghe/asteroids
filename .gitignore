@@ -1,1 +1,4 @@
-asteroidsgame/game_state.jsonl
+game_state.jsonl
+.venv/*
+__pycache__/*
+uv.lock
